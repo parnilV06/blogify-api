@@ -12,5 +12,10 @@ router.get('/', postController.getAllPosts);
 
 // We can remove the old inline function entirely!
 // router.get('/', (req, res) => { ... }); // This is now gone
+// Add this new route for testing
+router.post('/test-body', (req, res) => {
+  console.log('Received body:', req.body);
+  res.status(200).json({ status: 'success', received: req.body });
+});
 
 module.exports = router;
